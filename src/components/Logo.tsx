@@ -21,7 +21,7 @@ const Logo: React.FC<LogoProps> = ({ small = false }) => {
           className={`${small ? 'h-[40px]' : 'h-[60px]'} object-contain mb-1`}
         />
         {!small && <p className="text-xs text-center text-slate-800 tracking-wide">QUALITY. TECHNOLOGY. INNOVATION</p>}
-        {small && <p className="text-xs text-center text-white tracking-wide">QUALITY. TECHNOLOGY. INNOVATION</p>}
+        {small && <p className="text-xs text-center text-slate-800 tracking-wide">QUALITY. TECHNOLOGY. INNOVATION</p>}
       </div>
     </motion.div>
   );
