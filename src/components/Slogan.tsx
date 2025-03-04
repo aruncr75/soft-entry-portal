@@ -10,16 +10,24 @@ const Slogan: React.FC = () => {
       transition={{ duration: 0.8, delay: 0.3 }}
       className="p-8 max-w-[769px]"
     >
-      <div className="space-y-6">
-        <div className="inline-block rounded-full bg-white/20 px-3 py-1 backdrop-blur-sm">
-          <span className="text-bel-button font-medium">Empowering Innovation</span>
+      <h1 className="text-2xl font-bold text-black mb-4">BHARAT ELECTRONICS LIMITED</h1>
+      
+      <div className="flex items-start">
+        <span className="text-7xl font-serif italic mr-2">7</span>
+        <div className="mt-1">
+          <span className="text-4xl font-serif italic">0</span>
+          <span className="text-2xl font-serif italic ml-1">Years ago,</span>
         </div>
-        <h2 className="text-5xl font-bold text-bel-text leading-tight">
-          Advanced Technology <br /> for a Secure Tomorrow
-        </h2>
-        <p className="text-xl text-bel-text/70 max-w-[600px]">
-          Pioneering electronics solutions for defense, aerospace, and civilian applications with precision and excellence.
-        </p>
+      </div>
+      
+      <p className="text-2xl font-bold text-[#0099cc] leading-tight mt-2">
+        ONE COMPANY SET OUT TO DEVELOP TECHNOLOGY<br />
+        TO SAFEGUARD THE NATION.
+      </p>
+      
+      <div className="mt-2">
+        <span className="text-3xl font-bold">TODAY, </span>
+        <span className="text-2xl text-[#0099cc] font-bold">IT IS SHAPING THE FUTURE OF INDIA'S DEFENCE!</span>
       </div>
     </motion.div>
   );

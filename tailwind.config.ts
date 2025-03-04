@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -67,7 +66,8 @@ export default {
 					background: '#FAE6DF',
 					button: '#0F171B',
 					text: '#0F171B',
-					muted: '#BABABA'
+					muted: '#BABABA',
+					blue: '#0099cc'
 				}
 			},
 			borderRadius: {

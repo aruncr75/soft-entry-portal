@@ -33,7 +33,7 @@ const LoginForm: React.FC = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-full max-w-[569px] bg-white rounded-2xl shadow-lg p-8 md:p-12"
+      className="w-full max-w-[500px] bg-white rounded-2xl shadow-lg p-8"
     >
       <motion.div 
         initial={{ opacity: 0, y: 10 }}
@@ -44,21 +44,21 @@ const LoginForm: React.FC = () => {
         <h1 className="text-3xl font-bold text-bel-text">Login Now</h1>
       </motion.div>
       
-      <form onSubmit={handleSubmit} className="space-y-8">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.4 }}
           className="space-y-2"
         >
-          <label htmlFor="userId" className="block text-xl font-semibold text-bel-muted">
+          <label htmlFor="userId" className="block text-lg font-semibold text-gray-400">
             User ID
           </label>
           <Input
             id="userId"
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
-            className="h-[69px] border-3 border-bel-muted rounded-xl text-lg px-4 focus-visible:ring-bel-text"
+            className="h-[55px] border border-gray-300 rounded-md text-lg px-4 focus-visible:ring-bel-text"
           />
         </motion.div>
         
@@ -68,7 +68,7 @@ const LoginForm: React.FC = () => {
           transition={{ delay: 0.4, duration: 0.4 }}
           className="space-y-2"
         >
-          <label htmlFor="password" className="block text-xl font-semibold text-bel-muted">
+          <label htmlFor="password" className="block text-lg font-semibold text-gray-400">
             Password
           </label>
           <Input
@@ -76,7 +76,7 @@ const LoginForm: React.FC = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="h-[69px] border-3 border-bel-muted rounded-xl text-lg px-4 focus-visible:ring-bel-text"
+            className="h-[55px] border border-gray-300 rounded-md text-lg px-4 focus-visible:ring-bel-text"
           />
         </motion.div>
         
@@ -88,9 +88,9 @@ const LoginForm: React.FC = () => {
         >
           <Button 
             type="submit" 
-            className="bg-bel-button hover:bg-bel-button/90 text-white font-semibold rounded-xl h-[69px] px-10 text-xl transition-all duration-300 hover:shadow-md"
+            className="bg-[#0F171B] hover:bg-[#0F171B]/90 text-white font-semibold rounded-md h-[50px] w-[100px] text-xl transition-all duration-300"
           >
-            Login
+            Okay
           </Button>
         </motion.div>
       </form>
@@ -99,9 +99,10 @@ const LoginForm: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.7, duration: 0.6 }}
-        className="mt-10 text-center text-bel-muted text-sm"
+        className="mt-10 text-center text-gray-400 text-sm"
       >
-        Copyright © Bharat Electronics Ltd. All rights reserved. Ver 1.0
+        Copyright © Bharat Electronics Ltd. All rights reserved.<br/>
+        Ver 1.0
       </motion.div>
     </motion.div>
   );
