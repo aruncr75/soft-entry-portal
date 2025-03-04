@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +92,38 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
   }
+}
+
+/* Custom animations */
+@layer utilities {
+  .transition-all-300 {
+    transition: all 0.3s ease;
+  }
+  
+  .transition-transform-300 {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-scale {
+    @apply hover:scale-105 transition-transform duration-300;
+  }
+  
+  .focus-ring {
+    @apply focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:outline-none;
+  }
+  
+  .input-focus-within {
+    @apply focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2;
+  }
+}
+
+/* Remove auto-fill background in Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
