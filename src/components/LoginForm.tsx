@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import { toast } from "@/components/ui/use-toast";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm: React.FC = () => {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,11 +23,13 @@ const LoginForm: React.FC = () => {
       return;
     }
     
-    // Here you would normally authenticate with a backend
+    // Navigate to dashboard on successful login
     toast({
       title: "Login successful",
       description: "Welcome back!",
     });
+    
+    navigate("/dashboard");
   };
   
   return (
