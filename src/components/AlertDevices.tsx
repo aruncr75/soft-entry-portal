@@ -34,7 +34,11 @@ const DeviceItem = ({ name, ip, type, selected, onClick }: DeviceItemProps) => {
   );
 };
 
-const AlertDevices = () => {
+interface AlertDevicesProps {
+  onDeviceSelect: (device: any) => void;
+}
+
+const AlertDevices = ({ onDeviceSelect }: AlertDevicesProps) => {
   const alertDevices = [
     { name: "Baseband Card", ip: "192.168.2.50", type: "ODU" as const },
     { name: "Power Amplifier", ip: "192.168.2.14", type: "ODU" as const },
@@ -48,6 +52,11 @@ const AlertDevices = () => {
   ];
 
   const [selectedDevice, setSelectedDevice] = useState<string | null>(null);
+
+  const handleDeviceClick = (device: any) => {
+    setSelectedDevice(device.name);
+    onDeviceSelect(device);
+  };
 
   return (
     <div className="h-full bg-gray-200">
@@ -66,7 +75,7 @@ const AlertDevices = () => {
             ip={device.ip}
             type={device.type}
             selected={selectedDevice === device.name}
-            onClick={() => setSelectedDevice(device.name)}
+            onClick={() => handleDeviceClick(device)}
           />
         ))}
       </div>

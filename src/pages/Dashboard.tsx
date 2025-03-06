@@ -1,30 +1,28 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import DashboardSidebar from '@/components/DashboardSidebar';
 import AlertDevices from '@/components/AlertDevices';
+import DeviceDetails from '@/components/DeviceDetails';
 import DeviceHealth from '@/components/DeviceHealth';
 
 const Dashboard = () => {
+  const [selectedDevice, setSelectedDevice] = useState(null);
+
   return (
     <div className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
       <DashboardSidebar />
-      
-      {/* Main content */}
-      <div className="flex-1 flex flex-col overflow-hidden">
-       
+      <div className="flex-1 flex overflow-hidden">
+        {/* Left panel - Alert Devices */}
+        <div className="w-[400px] overflow-y-auto border-r">
+          <AlertDevices onDeviceSelect={setSelectedDevice} />
+        </div>
         
-        {/* Content */}
-        <div className="flex flex-1 overflow-hidden">
-          {/* Left panel - Alert Devices */}
-          <div className="w-1/3 overflow-y-auto border-r">
-            <AlertDevices />
-          </div>
-          
-          {/* Right panel - Device Health */}
-          <div className="w-2/3 overflow-y-auto">
+        {/* Right panel - DeviceHealth or DeviceDetails */}
+        <div className="flex-1 overflow-y-auto">
+          {selectedDevice ? (
+            <DeviceDetails device={selectedDevice} />
+          ) : (
             <DeviceHealth />
-          </div>
+          )}
         </div>
       </div>
     </div>
