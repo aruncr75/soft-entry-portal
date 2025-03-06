@@ -57,7 +57,7 @@ const DashboardSidebar = () => {
       </div>
 
       {/* User profile at bottom */}
-      <div className="p-4 border-t border-gray-700 flex items-center justify-between">
+      <div className="p-4 border-t border-gray-700 flex items-center">
         <div className="flex items-center space-x-3">
           <div className="h-10 w-10 rounded-full bg-gray-300 overflow-hidden">
             <img
@@ -66,12 +66,17 @@ const DashboardSidebar = () => {
               className="h-full w-full object-cover"
             />
           </div>
-          <div>
-            <div className="text-white font-medium">S. Kumar</div>
+            <div className="flex flex-col">
+            <div className="flex items-center gap-3">
+              <span className="text-white font-medium">S. Kumar</span>
+              <ChevronDown
+              className="text-white font-medium self-center font-bold"
+              size={20}
+              />
+            </div>
             <div className="text-gray-400 text-sm">Admin</div>
-          </div>
+            </div>
         </div>
-        <ChevronDown className="text-gray-400" size={16} />
       </div>
     </aside>
   );
