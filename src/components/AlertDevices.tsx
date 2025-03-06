@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AddDeviceDialog from "./AddDeviceDialog";
 
 interface DeviceItemProps {
   name: string;
@@ -52,6 +53,7 @@ const AlertDevices = ({ onDeviceSelect }: AlertDevicesProps) => {
   ];
 
   const [selectedDevice, setSelectedDevice] = useState<string | null>(null);
+  const [isAddDeviceOpen, setIsAddDeviceOpen] = useState(false);
 
   const handleDeviceClick = (device: any) => {
     setSelectedDevice(device.name);
@@ -99,11 +101,19 @@ const AlertDevices = ({ onDeviceSelect }: AlertDevicesProps) => {
       </div>
 
       <div className="p-4 flex justify-center">
-        <Button className="bg-lime-300 hover:bg-lime-400 text-black font-medium flex items-center gap-2">
+        <Button 
+          className="bg-lime-300 hover:bg-lime-400 text-black font-medium flex items-center gap-2"
+          onClick={() => setIsAddDeviceOpen(true)}
+        >
           <Plus size={20} />
           Add Device
         </Button>
       </div>
+
+      <AddDeviceDialog 
+        open={isAddDeviceOpen} 
+        onOpenChange={setIsAddDeviceOpen}
+      />
     </div>
   );
 };
