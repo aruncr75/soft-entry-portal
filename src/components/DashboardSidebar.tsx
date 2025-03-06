@@ -28,13 +28,13 @@ const SidebarItem = ({ icon: Icon, label, active = false, to = "#" }) => {
 
 const DashboardSidebar = () => {
   return (
-    <aside className="w-64 min-h-screen bg-[#0F171B] flex flex-col relative">
+    <aside className="w-80 min-h-screen bg-[#0F171B] flex flex-col relative">
       {/* Blue header at the top */}
       <div className="flex flex-col items-start p-[26px_10px] gap-[10px] w-[calc(100%-2rem)] h-[165px] mx-auto bg-[#D1EFFF] rounded-[0px_0px_30px_30px]">
         <Logo small />
       </div>
 
-      <div className="flex-1 mt-[100px]">
+      <div className="flex-1 mt-[50px]">
         <SidebarItem
           icon={LayoutDashboard}
           label="Dashboard"
@@ -45,11 +45,15 @@ const DashboardSidebar = () => {
         <SidebarItem icon={Users} label="User Management" to="#" />
         <SidebarItem icon={FileText} label="Report Generation" to="#" />
         <SidebarItem icon={Heart} label="Health Status" to="#" />
-        <SidebarItem icon={Database} label="IDU Status" to="#" />
-        <SidebarItem icon={Database} label="ODU Status" to="#" />
+        <div className="ml-4">
+          <SidebarItem icon={Database} label="IDU Status" to="#" />
+          <SidebarItem icon={Database} label="ODU Status" to="#" />
+        </div>
         <SidebarItem icon={Settings} label="Configuration" to="#" />
-        <SidebarItem icon={Database} label="IDU Configuration" to="#" />
-        <SidebarItem icon={Database} label="ODU Configuration" to="#" />
+        <div className="ml-4">
+          <SidebarItem icon={Database} label="IDU Configuration" to="#" />
+          <SidebarItem icon={Database} label="ODU Configuration" to="#" />
+        </div>
       </div>
 
       {/* User profile at bottom */}
