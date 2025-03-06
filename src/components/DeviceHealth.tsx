@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AlertCircle, CheckCircle } from 'lucide-react';
 
@@ -59,11 +58,12 @@ const Arrow = ({
 const DeviceHealth = () => {
   return (
     <div className="h-full relative">
-      <div className="p-4 bg-gray-200">
+      <div className="p-4 bg-white-200">
         <h2 className="text-xl font-bold">Device Card Health Status (Point to Point)</h2>
+       
       </div>
-      
-      <div className="relative p-4 h-[calc(100%-60px)]">
+      <hr className="my-0 border-gray-300" />    
+      <div className="relative p-4 h-[calc(100%-60px)] bg-white-200">
         {/* First node */}
         <DeviceNode 
           id="ODU" 

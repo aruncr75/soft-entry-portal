@@ -3,7 +3,6 @@ import React from 'react';
 import DashboardSidebar from '@/components/DashboardSidebar';
 import AlertDevices from '@/components/AlertDevices';
 import DeviceHealth from '@/components/DeviceHealth';
-import DashboardHeader from '@/components/DashboardHeader';
 
 const Dashboard = () => {
   return (
@@ -13,8 +12,7 @@ const Dashboard = () => {
       
       {/* Main content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Header */}
-        <DashboardHeader />
+       
         
         {/* Content */}
         <div className="flex flex-1 overflow-hidden">

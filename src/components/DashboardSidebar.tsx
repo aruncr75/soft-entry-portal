@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -29,9 +28,9 @@ const SidebarItem = ({ icon: Icon, label, active = false, to = "#" }) => {
 
 const DashboardSidebar = () => {
   return (
-    <aside className="w-64 bg-[#0F171B] flex flex-col relative">
+    <aside className="w-64 min-h-screen bg-[#0F171B] flex flex-col relative">
       {/* Blue header at the top */}
-      <div className="flex flex-col items-start p-[26px_10px] gap-[10px] w-[316px] h-[165px] bg-[#D1EFFF] rounded-[0px_0px_30px_30px] relative left-[34px]">
+      <div className="flex flex-col items-start p-[26px_10px] gap-[10px] w-[calc(100%-2rem)] h-[165px] mx-auto bg-[#D1EFFF] rounded-[0px_0px_30px_30px]">
         <Logo small />
       </div>
       

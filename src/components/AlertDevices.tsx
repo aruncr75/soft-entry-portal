@@ -35,7 +35,7 @@ const AlertDevices = () => {
   ];
   
   return (
-    <div className="h-full">
+    <div className="h-full bg-gray-200">
       <div className="p-4 bg-gray-200">
         <h2 className="text-xl font-bold inline-block">Alert Devices</h2>
         <span className="ml-2 bg-gray-400 text-white px-2 py-1 rounded-full text-sm">3</span>
