@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -6,22 +6,30 @@ interface DeviceItemProps {
   name: string;
   ip: string;
   type: "ODU" | "IDU";
+  selected?: boolean;
+  onClick?: () => void;
 }
 
-const DeviceItem = ({ name, ip, type }: DeviceItemProps) => {
+const DeviceItem = ({ name, ip, type, selected, onClick }: DeviceItemProps) => {
   return (
-    <div className="p-4">
+    <div
+      className="p-4 cursor-pointer"
+      onClick={onClick}
+      style={{
+        background: selected ? "#17332E" : undefined,
+        color: selected ? "#fff" : undefined,
+      }}
+    >
       <div className="flex justify-between items-center">
         <div className="font-medium">{name}</div>
-       
       </div>
       <div className="flex justify-between items-center">
-      <div className="text-gray-500">{ip}</div>
-      <div className="bg-gray-300 text-gray-700 px-2 py-1 text-sm rounded">
+        <div className="text-gray-500">{ip}</div>
+        <div className="bg-gray-300 text-gray-700 px-2 py-1 text-sm rounded">
           {type}
         </div>
       </div>
-      <hr className="my-2 border-gray-300" />
+      <hr className={`my-2 border-${selected ? 'gray-700' : 'gray-300'}`} />
     </div>
   );
 };
@@ -39,6 +47,8 @@ const AlertDevices = () => {
     { name: "E3 Card", ip: "192.168.2.5", type: "ODU" as const },
   ];
 
+  const [selectedDevice, setSelectedDevice] = useState<string | null>(null);
+
   return (
     <div className="h-full bg-gray-200">
       <div className="p-4 bg-gray-200">
@@ -55,6 +65,8 @@ const AlertDevices = () => {
             name={device.name}
             ip={device.ip}
             type={device.type}
+            selected={selectedDevice === device.name}
+            onClick={() => setSelectedDevice(device.name)}
           />
         ))}
       </div>
