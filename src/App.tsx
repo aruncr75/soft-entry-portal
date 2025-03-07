@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import DeploymentConfig from "./pages/DeploymentConfig";
 import NotFound from "./pages/NotFound";
+import UserManagement from "./pages/UserManagement";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/deployment" element={<DeploymentConfig />} />
+          <Route path="/user-management" element={<UserManagement />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -47,7 +47,12 @@ const DashboardSidebar = ({ currentPath = "/dashboard" }) => {
           active={currentPath === "/deployment"}
           to="/deployment"
         />
-        <SidebarItem icon={Users} label="User Management" to="#" />
+        <SidebarItem
+          icon={Users}
+          label="User Management"
+          active={currentPath === "/user-management"}
+          to="/user-management"
+        />
         <SidebarItem icon={FileText} label="Report Generation" to="#" />
         <SidebarItem icon={Heart} label="Health Status" to="#" />
         <div className="ml-4">
