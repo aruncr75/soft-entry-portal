@@ -41,11 +41,11 @@ const DashboardSidebar = ({ currentPath = "/dashboard" }) => {
           active={currentPath === "/dashboard"}
           to="/dashboard"
         />
-        <SidebarItem 
-          icon={ServerCog} 
-          label="Deployment Configuration" 
+        <SidebarItem
+          icon={ServerCog}
+          label="Deployment Configuration"
           active={currentPath === "/deployment"}
-          to="/deployment" 
+          to="/deployment"
         />
         <SidebarItem icon={Users} label="User Management" to="#" />
         <SidebarItem icon={FileText} label="Report Generation" to="#" />
@@ -71,16 +71,16 @@ const DashboardSidebar = ({ currentPath = "/dashboard" }) => {
               className="h-full w-full object-cover"
             />
           </div>
-            <div className="flex flex-col">
+          <div className="flex flex-col">
             <div className="flex items-center gap-3">
               <span className="text-white font-medium">S. Kumar</span>
               <ChevronDown
-              className="text-white font-medium self-center font-bold"
-              size={20}
+                className="text-white font-medium self-center font-bold"
+                size={20}
               />
             </div>
             <div className="text-gray-400 text-sm">Admin</div>
-            </div>
+          </div>
         </div>
       </div>
     </aside>
