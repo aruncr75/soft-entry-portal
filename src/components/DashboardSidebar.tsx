@@ -26,7 +26,7 @@ const SidebarItem = ({ icon: Icon, label, active = false, to = "#" }) => {
   );
 };
 
-const DashboardSidebar = () => {
+const DashboardSidebar = ({ currentPath = "/dashboard" }) => {
   return (
     <aside className="w-80 min-h-screen bg-[#0F171B] flex flex-col relative">
       {/* Blue header at the top */}
@@ -38,10 +38,15 @@ const DashboardSidebar = () => {
         <SidebarItem
           icon={LayoutDashboard}
           label="Dashboard"
-          active
+          active={currentPath === "/dashboard"}
           to="/dashboard"
         />
-        <SidebarItem icon={ServerCog} label="Deployment Configuration" to="#" />
+        <SidebarItem 
+          icon={ServerCog} 
+          label="Deployment Configuration" 
+          active={currentPath === "/deployment"}
+          to="/deployment" 
+        />
         <SidebarItem icon={Users} label="User Management" to="#" />
         <SidebarItem icon={FileText} label="Report Generation" to="#" />
         <SidebarItem icon={Heart} label="Health Status" to="#" />
