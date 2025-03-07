@@ -35,7 +35,9 @@ const Index = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className={`${isMobile ? "w-full" : "w-2/5"} flex justify-center items-center h-full`}
+            className={`${
+              isMobile ? "w-full" : "w-2/5"
+            } flex justify-center items-center h-full`}
           >
             <LoginForm />
           </motion.div>
