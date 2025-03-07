@@ -30,8 +30,8 @@ const DashboardSidebar = ({ currentPath = "/dashboard" }) => {
   return (
     <aside className="w-80 min-h-screen bg-[#0F171B] flex flex-col relative">
       {/* Blue header at the top */}
-      <div className="flex flex-col items-start p-[26px_10px] gap-[10px] w-[calc(100%-2rem)] h-[165px] mx-auto bg-[#D1EFFF] rounded-[0px_0px_30px_30px]">
-        <Logo small />
+      <div className="flex flex-col items-center justify-center p-[26px_10px] gap-[10px] w-[calc(100%-2rem)] h-[165px] mx-auto bg-[#D1EFFF] rounded-[0px_0px_30px_30px]">
+        <Logo small center />
       </div>
 
       <div className="flex-1 mt-[50px]">
