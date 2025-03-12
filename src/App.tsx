@@ -9,6 +9,7 @@ import DeploymentConfig from "./pages/DeploymentConfig";
 import NotFound from "./pages/NotFound";
 import UserManagement from "./pages/UserManagement";
 import MonitoringAndReport from "./pages/MonitoringAndReport";
+import IduHealthStatus from "./pages/IduHealthStatus";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/deployment" element={<DeploymentConfig />} />
           <Route path="/user-management" element={<UserManagement />} />
           <Route path="/monitoring-report" element={<MonitoringAndReport />} />
+          <Route path="/idu-status" element={<IduHealthStatus />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
