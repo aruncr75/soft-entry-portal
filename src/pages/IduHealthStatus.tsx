@@ -1,75 +1,157 @@
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import React from "react";
 import DashboardSidebar from "@/components/DashboardSidebar";
 
+type CardStatus = {
+  status: "active" | "inactive" | "warning";
+};
+
+type Device = {
+  name: string;
+  cards: {
+    controlCard: CardStatus;
+    e1Card: CardStatus;
+    e3Card: CardStatus;
+    lanCard: CardStatus;
+    powerCard: CardStatus;
+  };
+};
+
+interface DeviceStatusCardsProps {
+  devices: Device[];
+}
+
+const StatusIcon: React.FC<{ status: CardStatus["status"] }> = ({ status }) => {
+  const colors = {
+    active: "text-green-500",
+    inactive: "text-red-500",
+    warning: "text-yellow-500",
+  };
+
+  return (
+    <div className={`w-3 h-3 rounded-full ${colors[status]} bg-current`} />
+  );
+};
+
+const CardItem: React.FC<{ name: string; status: CardStatus["status"] }> = ({
+  name,
+  status,
+}) => {
+  return (
+    <div className="flex items-center justify-between py-3">
+      <div className="flex items-center space-x-2">
+        <svg
+          className="w-6 h-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 6V10H5V6C5 5.45 5.45 5 6 5H18C18.55 5 19 5.45 19 6Z"
+            fill="currentColor"
+          />
+          <path
+            d="M5 12V18C5 18.55 5.45 19 6 19H18C18.55 19 19 18.55 19 18V12H5ZM10 17H8V14H10V17ZM14 17H12V14H14V17Z"
+            fill="currentColor"
+          />
+        </svg>
+        <span className="font-medium">{name}</span>
+      </div>
+      <StatusIcon status={status} />
+    </div>
+  );
+};
+
+const DeviceStatusCards: React.FC<DeviceStatusCardsProps> = ({ devices }) => {
+  return (
+    <div className="monitoring-card p-6 bg-white rounded-lg">
+      <h2 className="text-xl font-semibold mb-4">Device Status</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {devices.map((device, index) => (
+          <div key={index} className="border rounded-lg p-4">
+            <h3 className="text-lg font-medium mb-3">IDU {device.name}</h3>
+            <div className="divide-y">
+              <CardItem
+                name="Control Card"
+                status={device.cards.controlCard.status}
+              />
+              <CardItem name="E1 Card" status={device.cards.e1Card.status} />
+              <CardItem name="E3 Card" status={device.cards.e3Card.status} />
+              <CardItem name="Lan Card" status={device.cards.lanCard.status} />
+              <CardItem
+                name="Power Card"
+                status={device.cards.powerCard.status}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const IduHealthStatus = () => {
-  const [deviceAddress, setDeviceAddress] = useState("");
-  const [deviceType, setDeviceType] = useState("");
+  // Sample data
+  const sampleDevices: Device[] = [
+    {
+      name: "Device 1",
+      cards: {
+        controlCard: { status: "active" },
+        e1Card: { status: "active" },
+        e3Card: { status: "warning" },
+        lanCard: { status: "active" },
+        powerCard: { status: "active" },
+      },
+    },
+    {
+      name: "Device 2",
+      cards: {
+        controlCard: { status: "active" },
+        e1Card: { status: "inactive" },
+        e3Card: { status: "active" },
+        lanCard: { status: "warning" },
+        powerCard: { status: "active" },
+      },
+    },
+  ];
 
   return (
     <div className="flex min-h-screen">
       <DashboardSidebar currentPath="/idu-status" />
-
       <div className="flex-1 bg-[#FFE7E0] p-8">
         <h1 className="text-3xl font-semibold mb-8">IDU Health Status</h1>
 
-        {/* Device Status Section */}
+        {/* Device Status Cards Container */}
         <div className="bg-white rounded-xl shadow-sm p-8 relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-1 bg-cyan-400"></div>
-          <h2 className="text-xl font-semibold mb-6">Device Status</h2>
 
-          <div className="grid grid-cols-2 gap-8 mb-8">
-            <div>
-              <label className="block text-gray-500 mb-2">Device Address</label>
-              <Input
-                value={deviceAddress}
-                onChange={(e) => setDeviceAddress(e.target.value)}
-                placeholder="Enter device address"
-                className="border-2 border-gray-300 h-12"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-500 mb-2">Device Type</label>
-              <Input
-                value={deviceType}
-                onChange={(e) => setDeviceType(e.target.value)}
-                placeholder="Enter device type"
-                className="border-2 border-gray-300 h-12"
-              />
-            </div>
-          </div>
-
-          {/* Status Display Grid */}
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-[#F9F9F9] p-4 rounded">
-              <h3 className="font-medium mb-2">Power Status</h3>
-              <div className="text-sm text-gray-600">20dB</div>
-            </div>
-            <div className="bg-[#F9F9F9] p-4 rounded">
-              <h3 className="font-medium mb-2">Temperature</h3>
-              <div className="text-sm text-gray-600">25°C</div>
-            </div>
-            <div className="bg-[#F9F9F9] p-4 rounded">
-              <h3 className="font-medium mb-2">Operating Status</h3>
-              <div className="text-sm text-gray-600">Active</div>
-            </div>
-            <div className="bg-[#F9F9F9] p-4 rounded">
-              <h3 className="font-medium mb-2">Connection Status</h3>
-              <div className="text-sm text-gray-600">Connected</div>
-            </div>
-          </div>
-
-          <div className="flex justify-end gap-4 mt-8">
-            <Button className="bg-[#111820] text-white hover:bg-[#2a3642] px-10 rounded-md">
-              Refresh
-            </Button>
-            <Button
-              variant="outline"
-              className="border-[#111820] hover:bg-gray-100 px-10 rounded-md"
-            >
-              Clear
-            </Button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {sampleDevices.map((device, index) => (
+              <div key={index} className="rounded-lg p-4">
+                <h3 className="text-lg font-medium mb-3">IDU {device.name}</h3>
+                <div>
+                  <CardItem
+                    name="Control Card"
+                    status={device.cards.controlCard.status}
+                  />
+                  <CardItem
+                    name="E1 Card"
+                    status={device.cards.e1Card.status}
+                  />
+                  <CardItem
+                    name="E3 Card"
+                    status={device.cards.e3Card.status}
+                  />
+                  <CardItem
+                    name="Lan Card"
+                    status={device.cards.lanCard.status}
+                  />
+                  <CardItem
+                    name="Power Card"
+                    status={device.cards.powerCard.status}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
