@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import UserManagement from "./pages/UserManagement";
 import MonitoringAndReport from "./pages/MonitoringAndReport";
 import IduHealthStatus from "./pages/IduHealthStatus";
+import OduHealthStatus from "./pages/OduHealthStatus";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/user-management" element={<UserManagement />} />
           <Route path="/monitoring-report" element={<MonitoringAndReport />} />
           <Route path="/idu-status" element={<IduHealthStatus />} />
+          <Route path="/odu-status" element={<OduHealthStatus />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -67,7 +67,12 @@ const DashboardSidebar = ({ currentPath = "/dashboard" }) => {
             to="/idu-status"
             active={currentPath === "/idu-status"}
           />
-          <SidebarItem icon={Database} label="ODU Status" to="#" />
+          <SidebarItem 
+            icon={Database} 
+            label="ODU Status" 
+            to="/odu-status"
+            active={currentPath === "/odu-status"}
+          />
         </div>
         <SidebarItem icon={Settings} label="Configuration" to="#" />
         <div className="ml-4">
