@@ -7,12 +7,11 @@ type CardStatus = {
 
 type Device = {
   name: string;
-  address: string;
   cards: {
-    basebandCard: CardStatus;
-    powerSupplyCard: CardStatus;
     duplexerCard: CardStatus;
-    amplifierCard: CardStatus;
+    modulatorCard: CardStatus;
+    demodulatorCard: CardStatus;
+    powerCard: CardStatus;
   };
 };
 
@@ -60,23 +59,21 @@ const CardItem: React.FC<{ name: string; status: CardStatus["status"] }> = ({
 const OduHealthStatus = () => {
   const sampleDevices: Device[] = [
     {
-      name: "ODU 1",
-      address: "192.168.2.50",
+      name: "Device 1",
       cards: {
-        basebandCard: { status: "active" },
-        powerSupplyCard: { status: "active" },
         duplexerCard: { status: "active" },
-        amplifierCard: { status: "active" },
+        modulatorCard: { status: "active" },
+        demodulatorCard: { status: "warning" },
+        powerCard: { status: "active" },
       },
     },
     {
-      name: "ODU 2",
-      address: "192.168.1.50",
+      name: "Device 2",
       cards: {
-        basebandCard: { status: "active" },
-        powerSupplyCard: { status: "inactive" },
-        duplexerCard: { status: "warning" },
-        amplifierCard: { status: "active" },
+        duplexerCard: { status: "active" },
+        modulatorCard: { status: "inactive" },
+        demodulatorCard: { status: "active" },
+        powerCard: { status: "warning" },
       },
     },
   ];
@@ -92,25 +89,24 @@ const OduHealthStatus = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {sampleDevices.map((device, index) => (
-              <div key={index} className=" rounded-lg p-4">
-                <h3 className="text-lg font-medium mb-1">ODU {device.name}</h3>
-                <p className="text-sm text-gray-500 mb-4">{device.address}</p>
+              <div key={index} className="rounded-lg p-4">
+                <h3 className="text-lg font-medium mb-3">ODU {device.name}</h3>
                 <div>
-                  <CardItem
-                    name="Baseband Card"
-                    status={device.cards.basebandCard.status}
-                  />
-                  <CardItem
-                    name="Power Supply Card"
-                    status={device.cards.powerSupplyCard.status}
-                  />
                   <CardItem
                     name="Duplexer Card"
                     status={device.cards.duplexerCard.status}
                   />
                   <CardItem
-                    name="Amplifier Card"
-                    status={device.cards.amplifierCard.status}
+                    name="Modulator Card"
+                    status={device.cards.modulatorCard.status}
+                  />
+                  <CardItem
+                    name="Demodulator Card"
+                    status={device.cards.demodulatorCard.status}
+                  />
+                  <CardItem
+                    name="Power Card"
+                    status={device.cards.powerCard.status}
                   />
                 </div>
               </div>
