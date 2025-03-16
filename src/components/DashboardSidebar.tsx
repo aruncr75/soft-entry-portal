@@ -82,7 +82,12 @@ const DashboardSidebar = ({ currentPath = "/dashboard" }) => {
             to="/idu-config"
             active={currentPath === "/idu-config"}
           />
-          <SidebarItem icon={Database} label="ODU Configuration" to="#" />
+          <SidebarItem
+            icon={Database}
+            label="ODU Configuration"
+            to="/odu-config"
+            active={currentPath === "/odu-config"}
+          />
         </div>
       </div>
 

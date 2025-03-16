@@ -12,6 +12,7 @@ import MonitoringAndReport from "./pages/MonitoringAndReport";
 import IduHealthStatus from "./pages/IduHealthStatus";
 import OduHealthStatus from "./pages/OduHealthStatus";
 import IduConfiguration from "./pages/IduConfiguration";
+import OduConfiguration from "./pages/OduConfiguration";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/idu-status" element={<IduHealthStatus />} />
           <Route path="/odu-status" element={<OduHealthStatus />} />
           <Route path="/idu-config" element={<IduConfiguration />} />
+          <Route path="/odu-config" element={<OduConfiguration />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
