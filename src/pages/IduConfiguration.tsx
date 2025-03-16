@@ -18,19 +18,27 @@ const IduConfiguration = () => {
                 <span className="text-gray-800">1</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">IP Address</span>
+                <span className="text-gray-600 font-medium w-64">
+                  IP Address
+                </span>
                 <span className="text-gray-800">192.168.2.14</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">Health Status</span>
+                <span className="text-gray-600 font-medium w-64">
+                  Health Status
+                </span>
                 <span className="text-green-500 font-medium">UP</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">SW Version</span>
+                <span className="text-gray-600 font-medium w-64">
+                  SW Version
+                </span>
                 <span className="text-gray-800">2.0 (19-2-19)</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">FW Version</span>
+                <span className="text-gray-600 font-medium w-64">
+                  FW Version
+                </span>
                 <span className="text-gray-800">15.1 (25-7-19)</span>
               </div>
             </div>
@@ -45,7 +53,7 @@ const IduConfiguration = () => {
                   "Port Status",
                   "Port Duplex Status",
                   "Port Admin Status",
-                  "Dest. Terminal Id"
+                  "Dest. Terminal Id",
                 ].map((header) => (
                   <div key={header} className="bg-[#D9D9D9] p-3">
                     <span className="font-semibold text-sm">{header}</span>
@@ -73,7 +81,7 @@ const IduConfiguration = () => {
                   <span className="text-sm">IDU-1</span>
                 </div>
               </div>
-              
+
               <div className="flex justify-end mt-8">
                 <button className="bg-[#1E88E5] text-white px-6 py-2 rounded-md hover:bg-blue-600">
                   Set Value
@@ -369,24 +377,158 @@ const IduConfiguration = () => {
                 <span className="text-gray-800">1</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">Health Status</span>
+                <span className="text-gray-600 font-medium w-64">
+                  Health Status
+                </span>
                 <span className="text-green-500 font-medium">UP</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">Control CuType</span>
+                <span className="text-gray-600 font-medium w-64">
+                  Control CuType
+                </span>
                 <span className="text-gray-800">Master</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">SW Version</span>
+                <span className="text-gray-600 font-medium w-64">
+                  SW Version
+                </span>
                 <span className="text-gray-800">2.0 (19-2-19)</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">FW Version</span>
+                <span className="text-gray-600 font-medium w-64">
+                  FW Version
+                </span>
                 <span className="text-gray-800">15.1 (25-7-19)</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">No. of Interfaces</span>
+                <span className="text-gray-600 font-medium w-64">
+                  No. of Interfaces
+                </span>
                 <span className="text-gray-800">6</span>
+              </div>
+            </div>
+          </div>
+        );
+      case "selftest":
+        return (
+          <div className="p-8">
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">
+                  IP Address
+                </span>
+                <span className="text-gray-800">192.168.1.14</span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">
+                  Device Type
+                </span>
+                <span className="text-gray-800">Indoor Unit</span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">
+                  Control Card Status
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-500">Good/OK</span>
+                  <svg
+                    className="w-5 h-5 text-green-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">
+                  E1 Card Status
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-500">Good/OK</span>
+                  <svg
+                    className="w-5 h-5 text-green-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">
+                  E3 Card Status
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-500">Good/OK</span>
+                  <svg
+                    className="w-5 h-5 text-green-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">
+                  Lan Card Status
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-500">Good/OK</span>
+                  <svg
+                    className="w-5 h-5 text-green-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">
+                  Power Card Status
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-500">Good/OK</span>
+                  <svg
+                    className="w-5 h-5 text-green-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -468,7 +610,9 @@ const IduConfiguration = () => {
           </div>
           <div
             className={`flex justify-center items-center px-[22px] py-[18px] w-[138px] h-[65px] ${
-              activeTab === "power" ? "bg-[#17332E] text-white" : "bg-transparent"
+              activeTab === "power"
+                ? "bg-[#17332E] text-white"
+                : "bg-transparent"
             } cursor-pointer`}
             onClick={() => setActiveTab("power")}
           >
@@ -476,8 +620,15 @@ const IduConfiguration = () => {
               Power Card
             </span>
           </div>
-          <div className="flex justify-center items-center px-[22px] py-[18px] w-[138px] h-[65px] bg-transparent">
-            <span className="font-inter font-semibold text-[20px] leading-[24px] text-black">
+          <div
+            className={`flex justify-center items-center px-[22px] py-[18px] w-[138px] h-[65px] ${
+              activeTab === "selftest"
+                ? "bg-[#17332E] text-white"
+                : "bg-transparent"
+            } cursor-pointer`}
+            onClick={() => setActiveTab("selftest")}
+          >
+            <span className="font-inter font-semibold text-[20px] leading-[24px]">
               Self Test
             </span>
           </div>
