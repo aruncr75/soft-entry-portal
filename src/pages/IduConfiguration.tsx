@@ -360,6 +360,37 @@ const IduConfiguration = () => {
             </div>
           </div>
         );
+      case "power":
+        return (
+          <div className="p-8">
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">ID</span>
+                <span className="text-gray-800">1</span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">Health Status</span>
+                <span className="text-green-500 font-medium">UP</span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">Control CuType</span>
+                <span className="text-gray-800">Master</span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">SW Version</span>
+                <span className="text-gray-800">2.0 (19-2-19)</span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">FW Version</span>
+                <span className="text-gray-800">15.1 (25-7-19)</span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-gray-600 font-medium w-64">No. of Interfaces</span>
+                <span className="text-gray-800">6</span>
+              </div>
+            </div>
+          </div>
+        );
       default:
         return null;
     }
@@ -435,8 +466,13 @@ const IduConfiguration = () => {
               Lan Card
             </span>
           </div>
-          <div className="flex justify-center items-center px-[22px] py-[18px] w-[138px] h-[65px] bg-transparent">
-            <span className="font-inter font-semibold text-[20px] leading-[24px] text-black">
+          <div
+            className={`flex justify-center items-center px-[22px] py-[18px] w-[138px] h-[65px] ${
+              activeTab === "power" ? "bg-[#17332E] text-white" : "bg-transparent"
+            } cursor-pointer`}
+            onClick={() => setActiveTab("power")}
+          >
+            <span className="font-inter font-semibold text-[20px] leading-[24px]">
               Power Card
             </span>
           </div>
