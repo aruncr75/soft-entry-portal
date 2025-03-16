@@ -316,6 +316,51 @@ const OduConfiguration = () => {
             </div>
           </div>
         );
+      case "poweramp":
+        return (
+          <div className="p-8">
+            
+            
+            {/* Power Amplifier Fields */}
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold mb-4">Power Amplifier Configuration</h3>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-2 max-w-[600px]">
+                <div className="bg-[#D9D9D9] p-3 rounded">
+                  <span className="font-semibold text-sm">Temperature</span>
+                </div>
+                <div className="bg-[#F9F9F9] p-3 rounded">
+                  <span className="text-sm">45°C</span>
+                </div>
+  
+                <div className="bg-[#D9D9D9] p-3 rounded">
+                  <span className="font-semibold text-sm">Current</span>
+                </div>
+                <div className="bg-[#F9F9F9] p-3 rounded">
+                  <span className="text-sm">2.5A</span>
+                </div>
+  
+                <div className="bg-[#D9D9D9] p-3 rounded">
+                  <span className="font-semibold text-sm">Power Level</span>
+                </div>
+                <div className="bg-[#F9F9F9] p-3 rounded">
+                  <span className="text-sm">30dBm</span>
+                </div>
+  
+                <div className="bg-[#D9D9D9] p-3 rounded">
+                  <span className="font-semibold text-sm">PA On/Off</span>
+                </div>
+                <div className="bg-[#F9F9F9] p-3 rounded flex justify-between items-center">
+                  <span className="text-sm">Enabled</span>
+                  <div className="relative">
+                    <div className="w-11 h-6 bg-[#2196F3] rounded-full">
+                      <div className="absolute w-5 h-5 bg-white rounded-full shadow-md top-[2px] right-[2px]"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
       default:
         return null;
     }
