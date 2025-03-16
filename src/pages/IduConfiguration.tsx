@@ -12,6 +12,7 @@ const IduConfiguration = () => {
       case "e1":
         return (
           <div className="p-8">
+            {/* Device Information */}
             <div className="space-y-4">
               <div className="flex items-center">
                 <span className="text-gray-600 font-medium w-64">ID</span>
@@ -278,72 +279,74 @@ const IduConfiguration = () => {
 
           {renderTabContent()}
 
-          {/* Divider */}
-          <div className="border-t border-gray-200 my-8"></div>
-
-          {/* Interface Table Section */}
-          <div className="px-8 pb-8">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-semibold">Interface Table</h3>
-            </div>
-
-            {/* Table Headers */}
-            <div className="grid grid-cols-9 gap-1 mb-1">
-              {[
-                "Index",
-                "Name",
-                "Descr",
-                "Type",
-                "IP Add.",
-                "Subnet Mask",
-                "Gateway",
-                "Dest. Term.Id",
-                "Status",
-              ].map((header) => (
-                <div key={header} className="bg-[#D9D9D9] p-3">
-                  <span className="font-semibold text-sm">{header}</span>
+          {activeTab === 'control' && (
+            <>
+              <div className="border-t border-gray-200 my-8"></div>
+              <div className="px-8 pb-8">
+                {/* Interface Table content */}
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-xl font-semibold">Interface Table</h3>
                 </div>
-              ))}
-            </div>
 
-            {/* Sample Table Row */}
-            <div className="grid grid-cols-9 gap-1">
-              <div className="bg-[#F9F9F9] p-3">
-                <span className="text-sm">1</span>
-              </div>
-              <div className="bg-[#F9F9F9] p-3">
-                <span className="text-sm">eth0</span>
-              </div>
-              <div className="bg-[#F9F9F9] p-3">
-                <span className="text-sm">Ethernet</span>
-              </div>
-              <div className="bg-[#F9F9F9] p-3">
-                <span className="text-sm">LAN</span>
-              </div>
-              <div className="bg-[#F9F9F9] p-3">
-                <span className="text-sm">192.168.1.100</span>
-              </div>
-              <div className="bg-[#F9F9F9] p-3">
-                <span className="text-sm">255.255.255.0</span>
-              </div>
-              <div className="bg-[#F9F9F9] p-3">
-                <span className="text-sm">192.168.1.1</span>
-              </div>
-              <div className="bg-[#F9F9F9] p-3">
-                <span className="text-sm">IDU-1</span>
-              </div>
-              <div className="bg-[#F9F9F9] p-3">
-                <span className="text-sm">Active</span>
-              </div>
-            </div>
+                {/* Table Headers */}
+                <div className="grid grid-cols-9 gap-1 mb-1">
+                  {[
+                    "Index",
+                    "Name",
+                    "Descr",
+                    "Type",
+                    "IP Add.",
+                    "Subnet Mask",
+                    "Gateway",
+                    "Dest. Term.Id",
+                    "Status",
+                  ].map((header) => (
+                    <div key={header} className="bg-[#D9D9D9] p-3">
+                      <span className="font-semibold text-sm">{header}</span>
+                    </div>
+                  ))}
+                </div>
 
-            {/* Buttons moved to bottom */}
-            <div className="flex justify-end gap-4 mt-8">
-              <button className="bg-[#1E88E5] text-white px-6 py-2 rounded-md hover:bg-blue-600">
-                Set Value
-              </button>
-            </div>
-          </div>
+                {/* Sample Table Row */}
+                <div className="grid grid-cols-9 gap-1">
+                  <div className="bg-[#F9F9F9] p-3">
+                    <span className="text-sm">1</span>
+                  </div>
+                  <div className="bg-[#F9F9F9] p-3">
+                    <span className="text-sm">eth0</span>
+                  </div>
+                  <div className="bg-[#F9F9F9] p-3">
+                    <span className="text-sm">Ethernet</span>
+                  </div>
+                  <div className="bg-[#F9F9F9] p-3">
+                    <span className="text-sm">LAN</span>
+                  </div>
+                  <div className="bg-[#F9F9F9] p-3">
+                    <span className="text-sm">192.168.1.100</span>
+                  </div>
+                  <div className="bg-[#F9F9F9] p-3">
+                    <span className="text-sm">255.255.255.0</span>
+                  </div>
+                  <div className="bg-[#F9F9F9] p-3">
+                    <span className="text-sm">192.168.1.1</span>
+                  </div>
+                  <div className="bg-[#F9F9F9] p-3">
+                    <span className="text-sm">IDU-1</span>
+                  </div>
+                  <div className="bg-[#F9F9F9] p-3">
+                    <span className="text-sm">Active</span>
+                  </div>
+                </div>
+
+                {/* Buttons moved to bottom */}
+                <div className="flex justify-end gap-4 mt-8">
+                  <button className="bg-[#1E88E5] text-white px-6 py-2 rounded-md hover:bg-blue-600">
+                    Set Value
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
