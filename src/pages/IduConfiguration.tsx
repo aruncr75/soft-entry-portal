@@ -18,23 +18,33 @@ const IduConfiguration = () => {
                 <span className="text-gray-800">1</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">Health Status</span>
+                <span className="text-gray-600 font-medium w-64">
+                  Health Status
+                </span>
                 <span className="text-green-500 font-medium">UP</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">Control CuType</span>
+                <span className="text-gray-600 font-medium w-64">
+                  Control CuType
+                </span>
                 <span className="text-gray-800">Master</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">SW Version</span>
+                <span className="text-gray-600 font-medium w-64">
+                  SW Version
+                </span>
                 <span className="text-gray-800">2.0 (19-2-19)</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">FW Version</span>
+                <span className="text-gray-600 font-medium w-64">
+                  FW Version
+                </span>
                 <span className="text-gray-800">15.1 (25-7-19)</span>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">No. of Interfaces</span>
+                <span className="text-gray-600 font-medium w-64">
+                  No. of Interfaces
+                </span>
                 <span className="text-gray-800">6</span>
               </div>
               <div className="flex items-center">
@@ -44,7 +54,9 @@ const IduConfiguration = () => {
                 </select>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">Network Id</span>
+                <span className="text-gray-600 font-medium w-64">
+                  Network Id
+                </span>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-800">192.168.1.14</span>
                   <button className="bg-[#1E88E5] text-white px-6 py-2 rounded-md hover:bg-blue-600">
@@ -53,7 +65,9 @@ const IduConfiguration = () => {
                 </div>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">Terminal Id</span>
+                <span className="text-gray-600 font-medium w-64">
+                  Terminal Id
+                </span>
                 <span className="text-gray-800">Power Level</span>
               </div>
             </div>
@@ -361,7 +375,7 @@ const IduConfiguration = () => {
 
           {renderTabContent()}
 
-          {activeTab === 'control' && (
+          {activeTab === "control" && (
             <>
               <div className="border-t border-gray-200 my-8"></div>
               <div className="px-8 pb-8">
