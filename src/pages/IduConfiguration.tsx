@@ -425,111 +425,34 @@ const IduConfiguration = () => {
                 </span>
                 <span className="text-gray-800">Indoor Unit</span>
               </div>
-              <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">
-                  Control Card Status
-                </span>
-                <div className="flex items-center gap-2">
-                  <span className="text-green-500">Good/OK</span>
-                  <svg
-                    className="w-5 h-5 text-green-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+              {[
+                "Control Card Status",
+                "E1 Card Status",
+                "E3 Card Status",
+                "Lan Card Status",
+                "Power Card Status",
+              ].map((label) => (
+                <div key={label} className="flex items-center">
+                  <span className="text-gray-600 font-medium w-64">
+                    {label}
+                  </span>
+                  <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center">
+                    <svg
+                      className="w-5 h-5 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">
-                  E1 Card Status
-                </span>
-                <div className="flex items-center gap-2">
-                  <span className="text-green-500">Good/OK</span>
-                  <svg
-                    className="w-5 h-5 text-green-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">
-                  E3 Card Status
-                </span>
-                <div className="flex items-center gap-2">
-                  <span className="text-green-500">Good/OK</span>
-                  <svg
-                    className="w-5 h-5 text-green-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">
-                  Lan Card Status
-                </span>
-                <div className="flex items-center gap-2">
-                  <span className="text-green-500">Good/OK</span>
-                  <svg
-                    className="w-5 h-5 text-green-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <span className="text-gray-600 font-medium w-64">
-                  Power Card Status
-                </span>
-                <div className="flex items-center gap-2">
-                  <span className="text-green-500">Good/OK</span>
-                  <svg
-                    className="w-5 h-5 text-green-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         );
