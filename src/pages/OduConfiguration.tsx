@@ -319,11 +319,11 @@ const OduConfiguration = () => {
       case "poweramp":
         return (
           <div className="p-8">
-            
-            
             {/* Power Amplifier Fields */}
             <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4">Power Amplifier Configuration</h3>
+              <h3 className="text-xl font-semibold mb-4">
+                Power Amplifier Configuration
+              </h3>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2 max-w-[600px]">
                 <div className="bg-[#D9D9D9] p-3 rounded">
                   <span className="font-semibold text-sm">Temperature</span>
@@ -331,21 +331,21 @@ const OduConfiguration = () => {
                 <div className="bg-[#F9F9F9] p-3 rounded">
                   <span className="text-sm">45°C</span>
                 </div>
-  
+
                 <div className="bg-[#D9D9D9] p-3 rounded">
                   <span className="font-semibold text-sm">Current</span>
                 </div>
                 <div className="bg-[#F9F9F9] p-3 rounded">
                   <span className="text-sm">2.5A</span>
                 </div>
-  
+
                 <div className="bg-[#D9D9D9] p-3 rounded">
                   <span className="font-semibold text-sm">Power Level</span>
                 </div>
                 <div className="bg-[#F9F9F9] p-3 rounded">
                   <span className="text-sm">30dBm</span>
                 </div>
-  
+
                 <div className="bg-[#D9D9D9] p-3 rounded">
                   <span className="font-semibold text-sm">PA On/Off</span>
                 </div>
